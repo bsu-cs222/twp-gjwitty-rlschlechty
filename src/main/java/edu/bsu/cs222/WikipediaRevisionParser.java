@@ -11,6 +11,10 @@ public class WikipediaRevisionParser {
         JSONArray result = JsonPath.read(testDataStream, "$..timestamp");
         return result.get(0).toString();
     }
+
+    public boolean doesPageExist(int value) {
+        return true;
+    }
 }
 
 
