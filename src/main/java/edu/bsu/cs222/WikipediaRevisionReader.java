@@ -33,6 +33,7 @@ public class WikipediaRevisionReader {
                     "(http://www.cs.bsu.edu/~pvg/courses/cs222Sp22; gjwitty@bsu.edu) ");
             InputStream inputStream = connection.getInputStream();
             WikipediaRevisionParser parser = new WikipediaRevisionParser();
+            //Lines 30-35 cannot be tested, does not follow FIRST (Not Independent)
             String timestamp = parser.parse(inputStream);
             return timestamp;
         } catch (MalformedURLException malformedURLException){

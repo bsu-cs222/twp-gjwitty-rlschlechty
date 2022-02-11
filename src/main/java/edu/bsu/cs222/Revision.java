@@ -1,4 +1,5 @@
 package edu.bsu.cs222;
+
 public class Revision {
     public Revision(String username, String timestamp){
         this.username = username;
@@ -16,5 +17,4 @@ public class Revision {
     public String getUsername() {
         return username;
     }
-  //  List<Revision> list = new ArrayList<>();
 }
