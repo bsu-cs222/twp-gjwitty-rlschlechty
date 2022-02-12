@@ -23,7 +23,7 @@ public class WikipediaRevisionReader {
     }
 
     private String getLatestRevision(String articleTitle) throws IOException{
-        String urlString = String.format("https://en.wikipedia.org/w/api.php?action=query&format=json&requestid=&prop=revisions&titles=Toast_(food)&redirects=1&rvprop=timestamp%7Cuser&rvlimit=30\n",
+        String urlString = String.format("https://en.wikipedia.org/w/api.php?action=query&format=json&requestid=&prop=revisions&titles=%s&redirects=1&rvprop=timestamp%7Cuser&rvlimit=30\n",
                 articleTitle);
         String encoderURLString = URLEncoder.encode(urlString, Charset.defaultCharset());
         try{

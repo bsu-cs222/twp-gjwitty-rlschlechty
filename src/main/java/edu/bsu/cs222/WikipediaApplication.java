@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.InputStream;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 public class WikipediaApplication extends Application {
@@ -30,7 +31,9 @@ public class WikipediaApplication extends Application {
             button.setDisable(true);
             textField.setDisable(true);
             executor.execute(()->{
+
                 String text = textField.getText();
+                WikipediaRevisionReader reader = new WikipediaRevisionReader();
                 int value = Integer.parseInt(text);
                 WikipediaRevisionParser parser = new WikipediaRevisionParser();
                 boolean result = parser.doesPageExist(value);
