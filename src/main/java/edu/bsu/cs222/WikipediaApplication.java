@@ -39,12 +39,17 @@ public class WikipediaApplication extends Application {
                 boolean result = parser.doesPageExist(value);
 
                 Platform.runLater(()->{
+                    if (result){
+                    //show revisions
+
+                    } else{
+                        // page doesn't exist
+                    }
                     button.setDisable(false);
                     textField.setDisable(false);
                 });
             });
         });
-
 
         VBox vbox = new VBox();
         vbox.getChildren().addAll(
