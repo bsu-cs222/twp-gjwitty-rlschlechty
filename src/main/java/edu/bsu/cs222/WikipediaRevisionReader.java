@@ -34,8 +34,7 @@ public class WikipediaRevisionReader {
             InputStream inputStream = connection.getInputStream();
             WikipediaRevisionParser parser = new WikipediaRevisionParser();
             //Lines 30-35 cannot be tested, does not follow FIRST (Not Independent)
-            String timestamp = parser.parse(inputStream);
-            return timestamp;
+            return parser.parse(inputStream);
         } catch (MalformedURLException malformedURLException){
             throw new RuntimeException(malformedURLException);
         }

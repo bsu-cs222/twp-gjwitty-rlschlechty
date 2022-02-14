@@ -5,7 +5,6 @@ public class Revision {
         this.username = username;
         this.timestamp = timestamp;
     }
-
     private final String username;
 
     private final String timestamp;

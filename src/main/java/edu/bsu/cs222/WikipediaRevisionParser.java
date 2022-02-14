@@ -9,9 +9,8 @@ import java.io.InputStream;
 public class WikipediaRevisionParser {
     public String parse(InputStream testDataStream) throws IOException {
         JSONArray result = JsonPath.read(testDataStream, "$..timestamp");
-        return result.get(0).toString();
+         return result.get(0).toString();
     }
-
     public boolean doesPageExist(int value) {
         return true;
     }

@@ -8,8 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.io.InputStream;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 public class WikipediaApplication extends Application {
@@ -18,30 +16,24 @@ public class WikipediaApplication extends Application {
     private final Button button = new Button("Search Revisions");
     private final Executor executor = Executors.newSingleThreadExecutor();
 
-
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setScene(new Scene(createUI()));
         primaryStage.show();
-
     }
-
     private Parent createUI() {
         button.setOnAction((event) -> {
             button.setDisable(true);
             textField.setDisable(true);
             executor.execute(()->{
-
                 String text = textField.getText();
                 WikipediaRevisionReader reader = new WikipediaRevisionReader();
                 int value = Integer.parseInt(text);
                 WikipediaRevisionParser parser = new WikipediaRevisionParser();
                 boolean result = parser.doesPageExist(value);
-
                 Platform.runLater(()->{
                     if (result){
-                    //show revisions
-
+                        //show revisions
                     } else{
                         // page doesn't exist
                     }
@@ -50,7 +42,6 @@ public class WikipediaApplication extends Application {
                 });
             });
         });
-
         VBox vbox = new VBox();
         vbox.getChildren().addAll(
                 textField,
